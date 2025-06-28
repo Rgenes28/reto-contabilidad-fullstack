@@ -21,8 +21,19 @@ Esto levantará:
 🛠️ Endpoint:
 GET /sc-app/cuentas/{id}/saldo
 Calcula: Suma de débitos - suma de créditos
-
 Utiliza lógica robusta para garantizar que las reglas contables se cumplan antes de registrar una transacción.
+
+# 📘 Documentación de la API - Swagger UI
+Este proyecto cuenta con documentación automática generada mediante Swagger (Springdoc OpenAPI).
+
+Una vez levantado el backend, puedes acceder a la interfaz interactiva para probar y explorar los endpoints:
+
+📎 URL por defecto:
+http://localhost:8080/swagger-ui.html
+o
+http://localhost:8080/swagger-ui/index.html
+
+La documentación se genera automáticamente escaneando los controladores REST, lo cual facilita la integración y pruebas desde el navegador.
 
 # 🎨 Interfaz:
 Componente React GestionCuentasContables.jsx con colores según saldo:
