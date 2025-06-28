@@ -18,7 +18,7 @@ Esto levantará:
 
 🛢️ Base de datos PostgreSQL
 
-✅ Funcionalidades implementadas
+# ✅ Funcionalidades implementadas
 1. 🔢 Control de saldos por cuenta
 🛠️ Endpoint:
 http
@@ -38,7 +38,7 @@ Componente React GestionCuentasContables.jsx con colores según saldo:
 
 ⚪ Gris: saldo en cero
 
-2. ✅ Validación de transacciones
+# 2. ✅ Validación de transacciones
 Antes de guardar una transacción, se valida que:
 
 Las cuentas contables estén activas
@@ -47,7 +47,7 @@ No se permita saldo negativo en cuentas que no lo permiten
 
 Toda esta lógica vive en TransaccionesServicios.java y es reutilizable y centralizada.
 
-3. 🔒 Gestión de cuentas activas/inactivas
+# 3. 🔒 Gestión de cuentas activas/inactivas
 Puedes activar o desactivar cuentas desde el frontend o backend.
 
 Las cuentas inactivas no pueden ser usadas en nuevas transacciones.
