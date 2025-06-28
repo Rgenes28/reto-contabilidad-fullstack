@@ -1,92 +1,79 @@
 
-# Sistema Contable Básico
+💼 Sistema Contable Básico
+Este sistema contable básico fue desarrollado como parte de una prueba técnica Full Stack. Permite gestionar transacciones financieras, terceros y cuentas contables, asegurando siempre la consistencia contable y una experiencia de usuario clara.
 
-## Descripción del reto
+⚙️ Levantamiento del sistema
+Este proyecto utiliza Docker para facilitar el despliegue de los tres componentes (backend, frontend y base de datos) con un solo comando gracias al archivo docker-compose.yml.
 
-Este sistema contable básico fue desarrollado como parte de una prueba técnica. Permite gestionar transacciones financieras, terceros y cuentas contables, con énfasis en una lógica robusta que garantice la consistencia contable.
+▶️ Instrucciones rápidas
+bash
+Copiar
+Editar
+docker-compose up --build
+Esto levantará:
 
-A continuación describo cómo abordé cada uno de los puntos solicitados:
+🌐 Frontend (React + Bootstrap)
 
----
+⚙️ Backend (Spring Boot)
 
-## ✅ Módulo de Control de Saldos por Cuenta
+🛢️ Base de datos PostgreSQL
 
-### ✔ 1. Endpoint e Interfaz para calcular y mostrar el saldo actual
-
-Implementé un endpoint que calcula el saldo actual de una cuenta contable:
-
-```
+✅ Funcionalidades implementadas
+1. 🔢 Control de saldos por cuenta
+🛠️ Endpoint:
+http
+Copiar
+Editar
 GET /sc-app/cuentas/{id}/saldo
-```
+Calcula: Suma de débitos - suma de créditos
 
-Este calcula el saldo como:
+Utiliza lógica robusta para garantizar que las reglas contables se cumplan antes de registrar una transacción.
 
-> **Suma de débitos - suma de créditos**
+🎨 Interfaz:
+Componente React GestionCuentasContables.jsx con colores según saldo:
 
-También desarrollé una interfaz React (`GestionCuentasContables.jsx`) que muestra todas las cuentas contables y sus saldos, aplicando colores para facilitar su interpretación:
+🟢 Verde: saldo positivo
 
-- 🟢 **Verde**: Saldo positivo  
-- 🔴 **Rojo**: Saldo negativo  
-- ⚪ **Gris**: Saldo cero
+🔴 Rojo: saldo negativo
 
-Esto mejora la usabilidad y permite una rápida visualización del estado contable.
+⚪ Gris: saldo en cero
 
----
+2. ✅ Validación de transacciones
+Antes de guardar una transacción, se valida que:
 
-### ✔ 2. Validación al crear transacciones
+Las cuentas contables estén activas
 
-Al registrar una nueva transacción, implementé una validación que impide que una cuenta quede con saldo negativo si no tiene permitido hacerlo. Si se intenta registrar una transacción así, se retorna un mensaje de error explicando la razón.
+No se permita saldo negativo en cuentas que no lo permiten
 
-Esta lógica se encuentra en el servicio de transacciones (`TransaccionesServicios.java`), antes de persistir cualquier cambio. Se evalúa el impacto de cada partida en el saldo proyectado.
+Toda esta lógica vive en TransaccionesServicios.java y es reutilizable y centralizada.
 
----
+3. 🔒 Gestión de cuentas activas/inactivas
+Puedes activar o desactivar cuentas desde el frontend o backend.
 
-### ✔ 3. Lógica de negocio robusta
+Las cuentas inactivas no pueden ser usadas en nuevas transacciones.
 
-Toda la lógica de cálculo y validación fue centralizada en funciones reutilizables para asegurar la claridad y facilidad de mantenimiento:
-
-- `calcularSaldoCuenta(Long cuentaId)`: Calcula el saldo actual de una cuenta.
-- Validación al crear transacciones que simula el impacto en el saldo antes de guardar.
-
-Estas funciones garantizan que las reglas del sistema se apliquen consistentemente en todo el backend.
-
----
-
-## ✅ Gestión de cuentas activas/inactivas
-
-Implementé la funcionalidad para **inactivar** cuentas contables desde la interfaz y el backend. Cuando una cuenta está inactiva, no puede ser usada en nuevas transacciones.
-
-- Endpoint para cambiar el estado:
-```
+Endpoints relevantes:
+http
+Copiar
+Editar
 PUT /sc-app/cuentas/{id}/estado
-```
-
-- También creé un endpoint adicional para consultar solo las cuentas activas:
-```
 GET /sc-app/cuentas/activas
-```
+🧪 Pruebas realizadas
+Usé Postman para validar que:
 
----
+❌ No se permiten transacciones con cuentas inactivas
 
-## 🧪 Pruebas desde Postman
+❌ No se permite saldo negativo cuando no está permitido
 
-Realicé pruebas para validar que:
+✅ Se pueden activar o inactivar cuentas desde los endpoints
 
-- No se permiten transacciones con cuentas inactivas.
-- No se permite dejar saldo negativo en cuentas que no lo permiten.
-- Se puede activar/desactivar cuentas correctamente.
+🛠️ Tecnologías utilizadas
+Capa	Tecnología
+Backend	Java + Spring Boot
+Frontend	React + Bootstrap
+Base Datos	PostgreSQL
+Entorno	Docker + Docker Compose
+Pruebas	Postman
 
----
-
-## 🚀 Tecnologías utilizadas
-
-- **Backend:** Java + Spring Boot  
-- **Frontend:** React + Bootstrap  
-- **Base de datos:** PostgreSQL  
-- **Herramientas de prueba:** Postman
-
----
-
-## 🙋‍♂️ Autor
-
-Ronaldo Genes  
+🙋‍♂️ Autor
+Desarrollado por Ronaldo Genes
