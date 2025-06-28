@@ -1,8 +1,8 @@
 
-💼 Sistema Contable Básico
+# 💼 Sistema Contable Básico
 Este sistema contable básico fue desarrollado como parte de una prueba técnica Full Stack. Permite gestionar transacciones financieras, terceros y cuentas contables, asegurando siempre la consistencia contable y una experiencia de usuario clara.
 
-⚙️ Levantamiento del sistema
+# ⚙️ Levantamiento del sistema
 Este proyecto utiliza Docker para facilitar el despliegue de los tres componentes (backend, frontend y base de datos) con un solo comando gracias al archivo docker-compose.yml.
 
 ▶️ Instrucciones rápidas
@@ -29,7 +29,7 @@ Calcula: Suma de débitos - suma de créditos
 
 Utiliza lógica robusta para garantizar que las reglas contables se cumplan antes de registrar una transacción.
 
-🎨 Interfaz:
+# 🎨 Interfaz:
 Componente React GestionCuentasContables.jsx con colores según saldo:
 
 🟢 Verde: saldo positivo
@@ -67,7 +67,7 @@ Usé Postman para validar que:
 
 ✅ Se pueden activar o inactivar cuentas desde los endpoints
 
-🛠️ Tecnologías utilizadas
+# 🛠️ Tecnologías utilizadas
 Capa	Tecnología
 Backend	Java + Spring Boot
 Frontend	React + Bootstrap
