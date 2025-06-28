@@ -6,9 +6,7 @@ Este sistema contable básico fue desarrollado como parte de una prueba técnica
 Este proyecto utiliza Docker para facilitar el despliegue de los tres componentes (backend, frontend y base de datos) con un solo comando gracias al archivo docker-compose.yml.
 
 ▶️ Instrucciones rápidas
-bash
-Copiar
-Editar
+En terminal 
 docker-compose up --build
 Esto levantará:
 
@@ -21,9 +19,6 @@ Esto levantará:
 # ✅ Funcionalidades implementadas
 1. 🔢 Control de saldos por cuenta
 🛠️ Endpoint:
-http
-Copiar
-Editar
 GET /sc-app/cuentas/{id}/saldo
 Calcula: Suma de débitos - suma de créditos
 
@@ -53,9 +48,6 @@ Puedes activar o desactivar cuentas desde el frontend o backend.
 Las cuentas inactivas no pueden ser usadas en nuevas transacciones.
 
 Endpoints relevantes:
-http
-Copiar
-Editar
 PUT /sc-app/cuentas/{id}/estado
 GET /sc-app/cuentas/activas
 🧪 Pruebas realizadas
@@ -76,4 +68,4 @@ Entorno	Docker + Docker Compose
 Pruebas	Postman
 
 🙋‍♂️ Autor
-Desarrollado por Ronaldo Genes
+Ronaldo Genes
