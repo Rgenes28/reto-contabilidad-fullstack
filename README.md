@@ -22,9 +22,7 @@ Esto levantará:
 # ✅ Funcionalidades implementadas
 1. 🔢 Control de saldos por cuenta
    
-🛠️ Endpoint:
-
-GET /sc-app/cuentas/{id}/saldo
+🛠️ Endpoint:GET /sc-app/cuentas/{id}/saldo
 
 Calcula: Suma de débitos - suma de créditos
 
