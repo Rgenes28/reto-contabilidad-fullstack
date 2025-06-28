@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:80"
+    container_name: frontend_app
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+    container_name: spring_backend
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: contabilidad
+    container_name: postgres_db
+
