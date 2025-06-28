@@ -6,8 +6,11 @@ Este sistema contable básico fue desarrollado como parte de una prueba técnica
 Este proyecto utiliza Docker para facilitar el despliegue de los tres componentes (backend, frontend y base de datos) con un solo comando gracias al archivo docker-compose.yml.
 
 ▶️ Instrucciones rápidas
-En terminal 
+
+en terminal ejecutar 
+
 docker-compose up --build
+
 Esto levantará:
 
 🌐 Frontend (React + Bootstrap)
@@ -18,9 +21,13 @@ Esto levantará:
 
 # ✅ Funcionalidades implementadas
 1. 🔢 Control de saldos por cuenta
+   
 🛠️ Endpoint:
+
 GET /sc-app/cuentas/{id}/saldo
+
 Calcula: Suma de débitos - suma de créditos
+
 Utiliza lógica robusta para garantizar que las reglas contables se cumplan antes de registrar una transacción.
 
 # 📘 Documentación de la API - Swagger UI
@@ -72,10 +79,15 @@ Usé Postman para validar que:
 
 # 🛠️ Tecnologías utilizadas
 Capa	Tecnología
+
 Backend	Java + Spring Boot
+
 Frontend	React + Bootstrap
+
 Base Datos	PostgreSQL
+
 Entorno	Docker + Docker Compose
+
 Pruebas	Postman
 
 🙋‍♂️ Autor
